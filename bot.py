@@ -18,10 +18,10 @@ greeting = random.choice(greetings)
 def send_welcome(message):
     bot.send_message(message.chat.id, greeting)
     keyboard = types.ReplyKeyboardMarkup(row_width=2, resize_keyboard=True)
-    main_button1 = types.KeyboardButton('katalog')
-    main_button2 = types.KeyboardButton('store')
-    main_button3 = types.KeyboardButton('tg channel')
-    main_button4 = types.KeyboardButton('button 4')
+    main_button1 = types.KeyboardButton('каталог')
+    main_button2 = types.KeyboardButton('магазин')
+    main_button3 = types.KeyboardButton('наш канал')
+    main_button4 = types.KeyboardButton('другое')
     keyboard.add(main_button1, main_button2, main_button3, main_button4)
     bot.reply_to(message, '1', reply_markup=keyboard)
 
@@ -29,20 +29,20 @@ def send_welcome(message):
 
 @bot.message_handler(func= lambda message: True)
 def handle_message(message):
-    if message.text == 'katalog':
+    if message.text == 'Каталог':
         pass
-    elif message.text == 'store':
+    elif message.text == 'Магазин':
         text = "Новости и выгодные предложения в [нашем канале](https://mrmattress.ru)"
         bot.send_message(message.chat.id, text, parse_mode='Markdown')
-    elif message.text == 'tg channel':
+    elif message.text == 'Наш канал':
         text = "Новости и выгодные предложения в [нашем канале](https://t.me/%2B7vMdFbgqm2Q0YzE6)"
         bot.send_message(message.chat.id, text, parse_mode='Markdown')
-    elif message.text == 'button 4':
+    elif message.text == 'Прочее':
             keyboard = types.ReplyKeyboardMarkup(row_width=2)
-            k4_button1 = types.KeyboardButton('address discont')
-            k4_button2 = types.KeyboardButton('manager')
-            k4_button3 = types.KeyboardButton('personal')
-            k4_button4 = types.KeyboardButton('back')
+            k4_button1 = types.KeyboardButton('Наши адреса')
+            k4_button2 = types.KeyboardButton('Связь с менеджером')
+            k4_button3 = types.KeyboardButton('Персональный')
+            k4_button4 = types.KeyboardButton('Назад')
             keyboard.add(k4_button1, k4_button2, k4_button3, k4_button4)
             bot.reply_to(message, '1', reply_markup=keyboard)
     elif message.text == 'personal':
@@ -55,12 +55,15 @@ def handle_message(message):
         bot.send_message(message.chat.id, text, parse_mode = 'HTML')
     elif message.text == 'back':
         keyboard = types.ReplyKeyboardMarkup(row_width=2, resize_keyboard=True)
-        main_button1 = types.KeyboardButton('katalog')
-        main_button2 = types.KeyboardButton('store')
-        main_button3 = types.KeyboardButton('tg channel')
-        main_button4 = types.KeyboardButton('button 4')
+        main_button1 = types.KeyboardButton('каталог')
+        main_button2 = types.KeyboardButton('магазин')
+        main_button3 = types.KeyboardButton('наш канал')
+        main_button4 = types.KeyboardButton('другое')
         keyboard.add(main_button1, main_button2, main_button3, main_button4)
         bot.reply_to(message, '1', reply_markup=keyboard)
+        
+
+
         
 
 
@@ -68,6 +71,19 @@ def handle_message(message):
 
 
    
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
